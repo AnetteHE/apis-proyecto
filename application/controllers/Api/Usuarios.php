@@ -24,18 +24,18 @@ class Usuarios extends REST_Controller{
     public function index_post(){
         $input = $this->input->post();
         $this->db->insert("usuarios", $input);
-        $this->response(['Usuarios agregada'], REST_Controller::HTTP_OK);
+        $this->response(['Usuarios agregado'], REST_Controller::HTTP_OK);
     }
 
     public function index_put($id){
         $input = $this->put();
         $this->db->update("Usuarios", $input, array("id_usuarios" => $id));
-        $this->response(['Usuarios actualizada'], REST_Controller::HTTP_OK);
+        $this->response(['Usuarios actualizado'], REST_Controller::HTTP_OK);
     }
 
     public function index_delete($id){
         $this->db->delete("usuarios", array("id_usuarios" => $id));
-        $this->response(['Usuarios eliminada'], REST_Controller::HTTP_OK);
+        $this->response(['Usuarios eliminado'], REST_Controller::HTTP_OK);
     }
 
 }
